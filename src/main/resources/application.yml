@@ -1,0 +1,34 @@
+app:
+  id: quarkus-app
+  name: Quarkus App
+
+quarkus:
+
+  live-reload:
+    instrumentation: true
+
+  datasource:
+    db-kind: h2
+    username: sa
+    password:
+    jdbc:
+      url: jdbc:h2:mem:test
+      max-size: 10
+
+  hibernate-orm:
+    database:
+      # https://quarkus.io/guides/hibernate-orm#quarkus-hibernate-orm_quarkus.hibernate-orm.scripts-database-scripts-related-configuration
+      # allowed values: none / create / drop-and-create / drop / update / validate
+      generation: drop-and-create
+
+  swagger-ui:
+    theme: original
+
+  smallrye-openapi:
+    info-title: ${app.name} API
+    info-version: 0.0.1
+
+hibernate:
+  validator:
+    allow_parameter_constraint_override: true
+
