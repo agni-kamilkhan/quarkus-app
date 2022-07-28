@@ -63,18 +63,18 @@ public class Product extends AbstractModel {
     protected String updateBy;
 
     // persistence operations
-    public void preUpdate(String updateBy, Date now) {
-        this.updateTime = now;
-        if (updateBy != null)
-            this.updateBy = updateBy;
-    }
-
-    public void prePersist(String createUpdateBy, Date now) {
-        this.createTime = now;
-        this.updateTime = now;
-        if (createUpdateBy != null) {
-            this.createBy = createUpdateBy;
-            this.updateBy = createUpdateBy;
-        }
-    }
+//    public void preUpdate(String updateBy, Date now) {
+//        this.updateTime = now;
+//        if (updateBy != null)
+//            this.updateBy = updateBy;
+//    }
+//
+//    public void prePersist(String createUpdateBy, Date now) {
+//        this.createTime = now;
+//        this.updateTime = now;
+//        if (createUpdateBy != null) {
+//            this.createBy = createUpdateBy;
+//            this.updateBy = createUpdateBy;
+//        }
+//    }
 }

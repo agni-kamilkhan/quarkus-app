@@ -27,4 +27,31 @@ public class DefaultControllerTest {
                 .body("size()", is(0));
     }
 
+    @Test
+    public void testGuessHigher() {
+        given()
+                .when().get("/guess/10")
+                .then()
+                .statusCode(200)
+                .body(is("It should be higher"));
+    }
+
+    @Test
+    public void testGuessLower() {
+        given()
+                .when().get("/guess/20")
+                .then()
+                .statusCode(200)
+                .body(is("It should be lower"));
+    }
+
+    @Test
+    public void testGuessEqual() {
+        given()
+                .when().get("/guess/12")
+                .then()
+                .statusCode(200)
+                .body(is("Congrats. Your guess is correct. It is 12"));
+    }
+
 }
