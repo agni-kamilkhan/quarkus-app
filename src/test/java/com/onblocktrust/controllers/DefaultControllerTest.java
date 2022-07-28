@@ -19,7 +19,7 @@ public class DefaultControllerTest {
     }
 
     @Test
-    public void testProducts() {
+    public void testList() {
         given()
                 .when().get("/products")
                 .then()
